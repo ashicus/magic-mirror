@@ -1,0 +1,112 @@
+.button {
+    cursor: pointer;
+    @include transition(all $base-animation-time);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.underline-small {
+        color: $white;
+        text-transform: uppercase;
+        font-size: rem(18);
+        font-weight: $bold;
+        border-bottom: rem(6) solid #1694b7;
+        padding-bottom: rem(4);
+
+        &:hover {
+            color: $pool-blue;
+            border-bottom-color: $white;
+        }
+
+        &.dark {
+            border-bottom-color: #0a5c86;
+        }
+
+        @include media($tablet) {
+            font-size: rem(27);
+        }
+    }
+
+    &.cta.large {
+        color: $white;
+        border: rem(3) solid $white;
+        text-transform: uppercase;
+        font-size: rem(22);
+        padding: 0.25rem 1rem;
+        border-radius: rem(10);
+        font-weight: $ultra-bold;
+
+        &:hover {
+            color: $dark-blue;
+            background-color: $white;
+        }
+    }
+
+    &.cta.small {
+        color: $pool-blue;
+        border: rem(2) solid #1694b7;
+        padding: rem(2) rem(18);
+        font-size: rem(21);
+        border-radius: rem(6);
+        font-weight: $bold;
+
+        &:hover {
+            color: $white;
+            background-color: #1694b7;
+        }
+    }
+
+    &.article, &.whitepaper {
+        color: $white;
+        font-size: rem(14);
+        border-radius: rem(2);
+        padding: 0.15rem 0.45rem;
+
+        &:hover {
+            color: $white;
+            background-color: #a0a8ab;
+        }
+    }
+
+    &.article {
+        background-color: #1694b7;
+    }
+
+    &.whitepaper {
+        border: rem(1) solid #a0a8ab;
+        color: $blue-gray;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &.resources.large {
+        font-size: rem(36);
+        font-weight: 900;
+        color: $blue;
+        border-bottom: rem(6) solid #1694b7;
+        text-transform: uppercase;
+        padding-bottom: rem(2);
+
+        &:hover {
+            color: #1694b7;
+        }
+    }
+
+    &.resources.small {
+        color: $dark-blue;
+        border: rem(2) solid #085084;
+        padding: 0.45rem 0.5rem;
+        font-size: rem(14);
+        border-radius: rem(6);
+        font-weight: $semi-bold;
+
+        &:hover {
+            color: $white;
+            background-color: #085084;
+        }
+    }
+}
