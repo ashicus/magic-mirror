@@ -1,0 +1,15 @@
+.date {
+    @include span-columns(6);
+
+    color: $light-blue;
+    font-size: $font-medium;
+    margin-top: rem(42);
+}
+
+.time {
+    @include span-columns(6);
+    @include omega();
+
+    font-size: $font-large;
+    text-align: right;
+}

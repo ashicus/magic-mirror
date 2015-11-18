@@ -1,0 +1,30 @@
+$base-animation-time: 0.2s;
+
+// breakpoints
+$container-size: em(1000);
+$tablet-size: em(768);
+$phone-size: em(320);
+$mobile: new-breakpoint(min-width $phone-size 12);
+$tablet: new-breakpoint(min-width $tablet-size 12);
+$desktop: new-breakpoint(min-width $container-size 12);
+
+// fonts
+$base-font-size: 16px;
+$sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$serif: serif;
+$ultra-bold: 900;
+$bold: 700;
+$semi-bold: 600;
+$normal: 400;
+$light: 300;
+$font-large: rem(50);
+$font-medium: rem(25);
+$font-small: rem(24);
+
+// colors
+$black: #1a1a1a;
+$full-black: #000;
+$full-white: #fff;
+$light-blue: #bbf;
+
+$base-font-color: $full-white;
