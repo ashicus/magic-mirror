@@ -5,6 +5,10 @@
         @include span-columns(6);
     }
 
+    .right {
+        @include omega();
+    }
+
     .wi {
         color: $light-blue;
         margin: inherit rem(10);
@@ -127,6 +131,30 @@
             .high {
                 @include omega();
                 text-align: center;
+            }
+        }
+    }
+
+    .news {
+        @include fill-parent();
+
+        clear: both;
+        padding-top: 10rem;
+
+        .channels > .channel {
+            margin-bottom: 2rem;
+
+            .title {
+                color: $light-blue;
+                font-size: $font-small;
+                margin-bottom: 0.5rem;
+            }
+
+            .articles {
+                li {
+                    font-size: $font-smaller;
+                    margin-bottom: 0.25rem;
+                }
             }
         }
     }

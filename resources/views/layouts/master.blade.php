@@ -13,6 +13,7 @@
         </div>
 
         <script data-main="/js/main" src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script data-main="/js/main" src="/bower_components/moment/min/moment.min.js"></script>
         <script data-main="/js/main" src="/bower_components/requirejs/require.js"></script>
     </body>
 </html>

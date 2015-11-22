@@ -31,7 +31,11 @@
                 <ol class="week">
                     @for ($i = 0; $i < 5; $i++)
                         <li>
-                            <p class="day">{{ $weather[$i]['day'] }}</p>
+                            @if ($i == 0)
+                                <p class="day">Today</p>
+                            @else
+                                <p class="day">{{ $weather[$i]['day'] }}</p>
+                            @endif
                             <p class="icon wi {{ $weather[$i]['icon'] }}"></p>
                             <p class="high">{{ $weather[$i]['high_temperature'] }}°</p>
                             <p class="low">{{ $weather[$i]['low_temperature'] }}°</p>
@@ -46,6 +50,25 @@
                 <p class="date">{{ $date }}</p>
                 <p class="time">{{ $time }}</p>
             </div>
+        </div>
+
+        <div class="news">
+            <ul class="channels">
+            @foreach ($news as $channel)
+                <li class="channel">
+                    <p class="title">
+                        {{-- <img src="{{ $channel['channel_image'] }}" /> --}}
+                        {{ $channel['channel_title'] }}
+                    </p>
+
+                    <ul class="articles">
+                        @foreach ($channel['items'] as $item)
+                            <li>{{ $item['title'] }}</li>
+                        @endforeach
+                    </ul>
+                </li>
+            @endforeach
+            </ul>
         </div>
     </div>
 @endsection
