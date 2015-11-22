@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'MirrorController@index');
+Route::get('/flush_cache', 'MirrorController@flush_cache');

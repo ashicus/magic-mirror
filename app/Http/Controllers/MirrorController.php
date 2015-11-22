@@ -2,22 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Cache;
+use App\Http\Controllers\WeatherController;
 
 class MirrorController extends Controller
 {
-    /**
-     * Show the profile for the given user.
-     *
-     * @return Response
-     */
+    private $weather_controller;
+
     public function index()
     {
+        $weather_controller = new WeatherController();
+        $weather_data = $weather_controller->get_weather(33.9567,-83.3583);
+
+        $locale = 'Athens, GA';
+        $date = date('l, F d, Y');
+        $time = date('h:i a');
+        $weather = $weather_data;
+
         return view('mirror.main', [
-            'date' => 'Monday, November 17, 2015',
-            'time' => '10:00 pm',
-            'locale' => 'Athens, GA',
-            'current_temperature' => '72°'
+            'date' => $date,
+            'time' => $time,
+            'locale' => $locale,
+            'weather' => $weather
         ]);
+    }
+
+    public function flush_cache()
+    {
+        Cache::flush();
+        header('Location: /');
+        die();
     }
 }

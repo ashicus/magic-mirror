@@ -1,15 +1,91 @@
-.date {
-    @include span-columns(6);
+.mirror-view-main {
+    @include outer-container();
 
-    color: $light-blue;
-    font-size: $font-medium;
-    margin-top: rem(42);
-}
+    .locale {
+        @include fill-parent();
+        font-size: $font-small;
+    }
 
-.time {
-    @include span-columns(6);
-    @include omega();
+    .date {
+        @include row();
+        @include span-columns(6);
 
-    font-size: $font-large;
-    text-align: right;
+        color: $light-blue;
+        font-size: $font-medium;
+    }
+
+    .time {
+        @include span-columns(6);
+        @include omega();
+
+        font-size: $font-large;
+        text-align: right;
+    }
+
+    .weather {
+        @include span-columns(6);
+        clear: both;
+
+        .temp-conditions {
+            @include clearfix();
+
+            .conditions, .temp {
+                @include span-columns(6);
+            }
+
+            .wi {
+                font-size: $font-large;
+            }
+
+            .conditions {
+                text-align: center;
+            }
+
+            .current-conditions {
+                display: block;
+            }
+
+            .temp {
+
+            }
+        }
+
+        .wi {
+            color: $light-blue;
+        }
+
+        .current_temperature {
+            font-size: $font-large;
+        }
+
+        ol {
+            padding-left: 0;
+        }
+
+        li {
+            list-style: none;
+            clear: both;
+
+            p {
+                @include span-columns(3);
+                margin-top: 0;
+            }
+
+            .day {
+
+            }
+
+            .icon {
+
+            }
+
+            .low {
+
+            }
+
+            .high {
+                @include omega();
+            }
+        }
+    }
 }

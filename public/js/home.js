@@ -1,10 +1,6 @@
 (function($) {
-    $('.home').flexslider({
-        selector: '.updates li',
-        slideshow: true,
-        keyboard: false,
-        slideshowSpeed: 7000,
-        controlsContainer: '.controls',
-        directionNav: false
-    });
+    // var refresh_interval = 10 * 1000;
+    // var refresh_timer = setInterval(function() {
+    //     location.reload();
+    // }, refresh_interval);
 })(jQuery);
