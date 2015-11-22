@@ -1,7 +1,7 @@
 $base-animation-time: 0.2s;
 
 // breakpoints
-$max-width: em(1000) !global;
+$max-width: em(1080) !global;
 // $container-size: $max-width;
 // $tablet-size: em(768);
 // $phone-size: em(320);
@@ -18,9 +18,11 @@ $bold: 700;
 $semi-bold: 600;
 $normal: 400;
 $light: 300;
+$font-larger: rem(87);
 $font-large: rem(55);
 $font-medium: rem(30);
-$font-small: rem(25);
+$font-small: rem(20);
+$font-smaller: rem(14);
 
 // colors
 $black: #1a1a1a;

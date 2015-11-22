@@ -12,11 +12,12 @@ class MirrorController extends Controller
     public function index()
     {
         $weather_controller = new WeatherController();
-        $weather_data = $weather_controller->get_weather(33.9567,-83.3583);
+        $weather_data = $weather_controller->get_weather(33.9567, -83.3583);
+        // $weather_data = $weather_controller->get_weather(34.0500, -118.2500);
 
         $locale = 'Athens, GA';
         $date = date('l, F d, Y');
-        $time = date('h:i a');
+        $time = date('g:i a');
         $weather = $weather_data;
 
         return view('mirror.main', [

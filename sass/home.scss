@@ -1,31 +1,34 @@
 .mirror-view-main {
     @include outer-container();
 
+    .left, .right {
+        @include span-columns(6);
+    }
+
+    .wi {
+        color: $light-blue;
+        margin: inherit rem(10);
+    }
+
     .locale {
-        @include fill-parent();
-        font-size: $font-small;
+        font-size: $font-medium;
+        text-align: center;
     }
 
     .date {
-        @include row();
-        @include span-columns(6);
-
         color: $light-blue;
         font-size: $font-medium;
+        text-align: center;
     }
 
     .time {
-        @include span-columns(6);
-        @include omega();
+        @include fill-parent();
 
-        font-size: $font-large;
-        text-align: right;
+        font-size: $font-larger;
+        text-align: center;
     }
 
     .weather {
-        @include span-columns(6);
-        clear: both;
-
         .temp-conditions {
             @include clearfix();
 
@@ -34,28 +37,66 @@
             }
 
             .wi {
-                font-size: $font-large;
+                font-size: $font-larger;
             }
 
             .conditions {
                 text-align: center;
+
+                .icon {
+                    margin-bottom: 0;
+                }
             }
 
             .current-conditions {
                 display: block;
+                font-size: $font-small;
+                margin-top: 0.25rem;
             }
 
             .temp {
+                @include omega();
+                text-align: center;
 
+                .feels-like {
+                    margin-top: rem(-6);
+                }
             }
         }
 
-        .wi {
-            color: $light-blue;
+        .high-low {
+            @include fill-parent();
+            @include clearfix();
+
+            text-align: center;
         }
 
         .current_temperature {
-            font-size: $font-large;
+            font-size: $font-larger;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            &:after {
+                content: '°';
+                position: absolute;
+            }
+        }
+
+        .summaries {
+            clear: both;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: $font-smaller;
+        }
+
+        .sunrise-sunset {
+            @include clearfix();
+
+            .sunrise, .sunset {
+                @include span-columns(6);
+                text-align: center;
+            }
         }
 
         ol {
@@ -76,15 +117,16 @@
             }
 
             .icon {
-
+                text-align: center;
             }
 
             .low {
-
+                text-align: center;
             }
 
             .high {
                 @include omega();
+                text-align: center;
             }
         }
     }

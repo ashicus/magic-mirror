@@ -31,8 +31,8 @@ class Weather extends Model
                 'current_temperature' => round($json['currently']['temperature']),
                 'current_feels_like' => round($json['currently']['apparentTemperature']),
                 'current_conditions' => $json['currently']['summary'],
-                'hour_summary' => $json['minutely']['summary'],
-                'day_summary' => $json['hourly']['summary'],
+                'hour_summary' => $json['hourly']['summary'],
+                'day_summary' => $json['daily']['summary'],
                 'sunrise_time' => date('h:i a', $json['daily']['data'][0]['sunriseTime']),
                 'sunset_time' => date('h:i a', $json['daily']['data'][0]['sunsetTime']),
                 'low_temperature' => round($json['daily']['data'][0]['temperatureMin']),
@@ -40,9 +40,9 @@ class Weather extends Model
             ),
         );
 
-        for($i = 1; $i < 7; $i++) {
+        for($i = 0; $i < 5; $i++) {
             $weather_data[$i] = array(
-                'day' => date('D', $json['daily']['data'][$i]['time']),
+                'day' => date('l', $json['daily']['data'][$i]['time']),
                 'icon' => self::_map_icon($json['daily']['data'][$i]['icon']),
                 'sunrise_time' => date('h:i a', $json['daily']['data'][$i]['sunriseTime']),
                 'sunset_time' => date('h:i a', $json['daily']['data'][$i]['sunsetTime']),
