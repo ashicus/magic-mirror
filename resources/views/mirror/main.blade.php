@@ -6,7 +6,7 @@
     <div class="mirror-view-main">
         <div class="left">
             <div class="weather">
-                <p class="locale">{{ $locale }}</p>
+                <p class="locale">{{ $locale['city'] }}, {{ $locale['state'] }}</p>
                 <div class="today">
                     <div class="temp-conditions">
                         <div class="conditions">
@@ -63,7 +63,7 @@
 
                     <ul class="articles">
                         @foreach ($channel['items'] as $item)
-                            <li>{{ $item['title'] }}</li>
+                            <li>{{ $item['time'] }} - {{ $item['title'] }}</li>
                         @endforeach
                     </ul>
                 </li>

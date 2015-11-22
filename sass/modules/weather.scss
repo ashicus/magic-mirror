@@ -1,0 +1,106 @@
+.weather {
+    .temp-conditions {
+        @include clearfix();
+
+        .conditions, .temp {
+            @include span-columns(6);
+        }
+
+        .wi {
+            font-size: $font-larger;
+        }
+
+        .conditions {
+            text-align: center;
+
+            .icon {
+                margin-bottom: 0;
+            }
+        }
+
+        .current-conditions {
+            display: block;
+            font-size: $font-small;
+            margin-top: 0.25rem;
+        }
+
+        .temp {
+            @include omega();
+            text-align: center;
+
+            .feels-like {
+                margin-top: rem(-6);
+            }
+        }
+    }
+
+    .high-low {
+        @include fill-parent();
+        @include clearfix();
+
+        text-align: center;
+    }
+
+    .current_temperature {
+        font-size: $font-larger;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &:after {
+            content: '°';
+            position: absolute;
+        }
+    }
+
+    .summaries {
+        clear: both;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        font-size: $font-smaller;
+    }
+
+    .sunrise-sunset {
+        @include clearfix();
+
+        .sunrise, .sunset {
+            @include span-columns(6);
+            text-align: center;
+
+            .wi {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+    ol {
+        padding-left: 0;
+    }
+
+    li {
+        list-style: none;
+        clear: both;
+
+        p {
+            @include span-columns(3);
+            margin-top: 0;
+        }
+
+        .day {
+
+        }
+
+        .icon {
+            text-align: center;
+        }
+
+        .low {
+            text-align: center;
+        }
+
+        .high {
+            @include omega();
+            text-align: center;
+        }
+    }
+}
