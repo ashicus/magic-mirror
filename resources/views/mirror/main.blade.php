@@ -43,6 +43,27 @@
                     @endfor
                 </ol>
             </div>
+
+            <div class="calendar">
+                <p class="title">Calendar: {{ $calendar['name'] }}</p>
+                <ol>
+                    {{ $cur_date = null }}
+                    @foreach ($calendar['events'] as $event)
+                        @if ($event['start_date'] != $cur_date)
+                            <?php $cur_date = $event['start_date']; ?>
+                            <h2>{{ $cur_date }}</h2>
+                        @endif
+
+                        <li class="{{ $event['all_day'] ? 'all_day' : '' }}">
+                            @if ($event['all_day'])
+                                All day - {{ $event['summary'] }}
+                            @else
+                                {{ $event['start_time'] }} - {{ $event['summary'] }}
+                            @endif
+                        </li>
+                    @endforeach
+                </ol>
+            </div>
         </div>
 
         <div class="right">

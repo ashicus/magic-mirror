@@ -1,0 +1,18 @@
+.calendar {
+    clear: both;
+    padding-top: 2rem;
+
+    .title {
+        color: $light-blue;
+    }
+
+    h2 {
+        color: $light-blue;
+        margin-bottom: 0.5rem;
+    }
+
+    li {
+        font-size: $font-smaller;
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,7 +1,8 @@
 .mirror-view-main {
     @import 'modules/weather';
+    @import 'modules/calendar';
     @import 'modules/news';
-    
+
     @include outer-container();
 
     .left, .right {

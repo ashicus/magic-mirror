@@ -26,11 +26,20 @@ class NewsSource extends Model
 
     public function get()
     {
-        $xml = simplexml_load_string(file_get_contents($this->rss_url));
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->rss_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'
+        ));
+        $output = curl_exec($ch);
+        curl_close($ch);
+        // var_dump($output); die();
+
+        $xml = simplexml_load_string($output);
 
         $return = array(
             'channel_title' => $xml->channel->title->__toString(),
-            'channel_image' => $xml->channel->image->url->__toString(),
             'items' => array()
         );
 
