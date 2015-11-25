@@ -56,7 +56,7 @@
 
                         <li class="{{ $event['all_day'] ? 'all_day' : '' }}">
                             @if ($event['all_day'])
-                                All day - {{ $event['summary'] }}
+                                {{ $event['summary'] }}
                             @else
                                 {{ $event['start_time'] }} - {{ $event['summary'] }}
                             @endif
