@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Cache;
+use Config;
 use App\Models\Weather;
 
 class WeatherController extends Controller
@@ -24,7 +25,7 @@ class WeatherController extends Controller
                 4 => $weather_data[4],
             );
 
-            Cache::put($cache_key, $return, 10);
+            Cache::put($cache_key, $return, Config::get('mirror.cache_time'));
         }
 
         return $return;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Cache;
+use Config;
 use App\Models\ICal;
 
 class CalendarController extends Controller
@@ -22,10 +23,12 @@ class CalendarController extends Controller
                 'events' => array()
             );
 
+            $now = strtotime(date('Y-m-d'));
+
             foreach ($events as $event) {
                 $start = strtotime($event['DTSTART']);
 
-                if($start >= time() && count($return['events']) < $limit) {
+                if($start >= $now && count($return['events']) < $limit) {
                     $end = strtotime($event['DTEND']);
                     $summary = @ucwords($event['SUMMARY']);
                     $all_day = date('g:i a', $start) == '12:00 am' ? true : false;
@@ -41,7 +44,7 @@ class CalendarController extends Controller
                 }
             }
 
-            Cache::put($cache_key, $return, 10);
+            Cache::put($cache_key, $return, Config::get('mirror.cache_time'));
         }
 
         return $return;

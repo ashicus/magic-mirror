@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Cache;
+use Config;
 use App\Models\Locale;
 
 class LocaleController extends Controller
@@ -20,7 +21,7 @@ class LocaleController extends Controller
                 'state' => $locale_data['state'],
             );
 
-            Cache::put($cache_key, $return, 10);
+            Cache::put($cache_key, $return, Config::get('mirror.cache_time'));
         }
 
         return $return;

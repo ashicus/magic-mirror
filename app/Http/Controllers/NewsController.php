@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Cache;
+use Config;
 use App\Models\NewsSource;
 
 class NewsController extends Controller
@@ -28,7 +29,7 @@ class NewsController extends Controller
 
             if(!$data) {
                 $data = $source->get();
-                Cache::put($cache_key, $data, 10);
+                Cache::put($cache_key, $data, Config::get('mirror.cache_time'));
             }
 
             $return[] = $data;
