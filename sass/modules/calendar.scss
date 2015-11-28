@@ -6,13 +6,23 @@
         color: $light-blue;
     }
 
-    h2 {
-        color: $light-blue;
+    li {
+        @include span-columns(9);
+        @include shift(2);
+        
+        font-size: $font-smaller;
         margin-bottom: 0.5rem;
     }
 
-    li {
-        font-size: $font-smaller;
+    h2 {
+        @include span-columns(2);
+
+        clear: both;
+        color: $light-blue;
         margin-bottom: 0.5rem;
+
+        & + li {
+            @include shift(0);
+        }
     }
 }

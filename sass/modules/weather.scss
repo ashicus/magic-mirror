@@ -58,6 +58,9 @@
         margin-top: 1rem;
         margin-bottom: 2rem;
         font-size: $font-smaller;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .sunrise-sunset {
@@ -91,16 +94,16 @@
         }
 
         .icon {
-            text-align: center;
+            text-align: right;
         }
 
         .low {
-            text-align: center;
+            text-align: right;
         }
 
         .high {
             @include omega();
-            text-align: center;
+            text-align: right;
         }
     }
 }
