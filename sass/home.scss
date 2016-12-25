@@ -34,5 +34,20 @@
 
         font-size: $font-larger;
         text-align: center;
+
+        span {
+            display: inline-block;
+            animation-duration: 2s;
+            animation-name: time-blink;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+
+            @keyframes time-blink {
+                0% { opacity: 1.0; }
+                50% { opacity: 0.5; }
+                100% { opacity: 1.0; }
+            }
+        }
     }
 }

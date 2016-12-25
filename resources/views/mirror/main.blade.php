@@ -69,7 +69,7 @@
         <div class="right">
             <div class="date-time">
                 <p class="date">{{ $date }}</p>
-                <p class="time">{{ $time }}</p>
+                <p class="time">{!! $time !!}</p>
             </div>
         </div>
 

@@ -34,7 +34,7 @@ class MirrorController extends Controller
 
         return view('mirror.main', [
             'date' => date('l, F d, Y'),
-            'time' => date('g:i a'),
+            'time' => date('g') . '<span>:</span>' . date('i a'),
             'locale' => $locale_data,
             'weather' => $weather_data,
             'calendar' => $calendar_data,

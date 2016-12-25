@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     pipe = require('gulp-plumber'),
     minify_css = require('gulp-minify-css'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    browserSync = require('browser-sync').create();
 
 require('laravel-elixir-vue-2');
 
@@ -24,6 +25,14 @@ elixir((mix) => {
        .webpack('app.js');
 });
 
+gulp.task('serve', ['sass'], function() {
+    browserSync.init({
+        proxy: "magic-mirror.dev"
+    });
+
+    gulp.watch("sass/*.scss", ['sass']);
+    gulp.watch("resources/views/**/*.blade.php").on('change', browserSync.reload);
+});
 
 // SASS
 
@@ -37,9 +46,8 @@ gulp.task('sass', function () {
         }))
         // .pipe(minify_css())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./public/css'));
+        .pipe(gulp.dest('./public/css'))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('sass:watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
-});
+gulp.task('default', ['serve']);
