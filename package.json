@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
+    "browser-sync": "^2.18.5",
     "gulp": "^3.9.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-plumber": "^1.1.0",
@@ -15,6 +16,7 @@
     "laravel-elixir-vue-2": "^0.2.0",
     "laravel-elixir-webpack-official": "^1.0.2",
     "lodash": "^4.16.2",
+    "node-sass": "^4.1.1",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3"
   }
