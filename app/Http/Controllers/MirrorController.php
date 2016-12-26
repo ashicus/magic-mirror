@@ -31,6 +31,7 @@ class MirrorController extends Controller
             $this->news_controller->add_source($source, 5);
         }
         $news_data = $this->news_controller->fetch_sources();
+        // var_dump($news_data);
 
         return view('mirror.main', [
             'date' => date('l, F d, Y'),

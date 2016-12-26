@@ -84,7 +84,7 @@
 
                     <ul class="articles">
                         @foreach ($channel['items'] as $item)
-                            <li><a href="#">{{ $item['time'] }} - {{ $item['title'] }}</a></li>
+                            <li><a href="{{ $item['link'] }}" target="_blank">{{ $item['time'] }} - {{ $item['title'] }}</a></li>
                         @endforeach
                     </ul>
                 </li>

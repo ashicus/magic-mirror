@@ -47,6 +47,7 @@ class NewsSource extends Model
             if(count($return['items']) < $this->limit) {
                 $return['items'][] = array(
                     'title' => $item->title->__toString(),
+                    'link' => $item->link->__toString(),
                     'raw_date' => $item->pubDate->__toString(),
                     'date' => date('F d', strtotime($item->pubDate->__toString())),
                     'time' => date('h:i a', strtotime($item->pubDate->__toString()))
