@@ -13,7 +13,7 @@ class Locale extends Model
         $xml = simplexml_load_string(file_get_contents(self::$API_URL . '&latt='.$lat.'&longt='.$long));
 
         $locale_data = array(
-            'city' => $xml->city->__toString(),
+            'city' => ucwords(strtolower($xml->city->__toString())),
             'state' => $xml->prov->__toString(),
         );
 
